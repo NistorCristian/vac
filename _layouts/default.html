@@ -2,9 +2,35 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
     
     <head>
+
+        <title>{{ site.title }}</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script async defer src="https://cdn.simpleanalytics.io/hello.js"></script>
+        <noscript><img src="https://api.simpleanalytics.io/hello.gif" alt=""></noscript>
+      
+        <!-- Twitter cards -->
+        <meta name="twitter:site"    content="@{{ site.twitter_username }}">
+        <meta name="twitter:creator" content="@{{ page.author }}">
+        <meta name="twitter:title"   content="{{ page.title }}">
+      
+        {% if page.summary %}
+        <meta name="twitter:description" content="{{ page.summary }}">
+        {% else %}
+        <meta name="twitter:description" content="{{ site.description }}">
+        {% endif %}
+      
+        {% if page.image %}
+        <meta name="twitter:card"  content="summary_large_image">
+        <meta name="twitter:image" content="{{ site.url }}{{ page.image }}">
+        {% else %}
+        <meta name="twitter:card"  content="summary">
+        <meta name="twitter:image" content="{{ site.title_image }}">
+        {% endif %}
+        <!-- end of Twitter cards -->
+
         <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     </head>
@@ -19,7 +45,7 @@
 
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script async src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
