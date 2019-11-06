@@ -12,6 +12,8 @@ github_username:  vacp2p
 plugins:
   - jekyll-feed
 
+theme: minima
+
 sass:
   sass_dir: _sass
   style: compressed
